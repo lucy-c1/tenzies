@@ -7,7 +7,7 @@ export default function Dice(props) {
         id = {"button" + props.index}
         style = {props.styles}
         >
-            <p className = "dice-num">1</p>
+            <p className = "dice-num">{props.numbersArr[props.index]}</p>
         </button>
     );
 }

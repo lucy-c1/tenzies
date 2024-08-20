@@ -23,6 +23,7 @@ function App() {
     - holdNumber
     - index
     - numbersArr
+  4. When page first loads, call rollDice() to set the initial values of numbersArr
   */
   const [styles, setStyles] = React.useState({
     backgroundColor: "white"
@@ -30,6 +31,28 @@ function App() {
   const [isHoldArr, setIsHoldArr] = React.useState([
     false, false, false, false, false, false, false, false, false, false
   ])
+
+  function generateRandomNumbers(n) {
+    const randomArr = []
+    for (let i = 0; i < n; i++) {
+      randomArr.push(Math.floor(Math.random() * 6 + 1));
+    }
+    return randomArr;
+  }
+
+  const [numbersArr, setNumbersArr] = React.useState(generateRandomNumbers(10));
+
+  function rollDice() {
+    // generate random numbers but only update the index of numersArr if the corresponding index in isHoldArr is false 
+    const randomArr = generateRandomNumbers(10);
+    setNumbersArr(function (prevNumbersArr) {
+      const newArr = prevNumbersArr.map(function (prevNumber, i) {
+        return isHoldArr[i] ? prevNumber : randomArr[i];
+      })
+      console.log(newArr)
+      return newArr
+    })
+  }
 
   function holdNumber(index) {
     console.log("holdNumber function. Selected index " + index);
@@ -66,40 +89,86 @@ function App() {
                 holdNumber = {holdNumber}
                 index = {0}
                 styles = {styles}
+                numbersArr = {numbersArr}
                 />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {1}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {2}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {3}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {4}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
             </div>
             <div className="row g-0 mt-5">
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {5}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {6}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {7}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {8}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
               <div className="col">
-                <Dice />
+                <Dice 
+                holdNumber = {holdNumber}
+                index = {9}
+                styles = {styles}
+                numbersArr = {numbersArr}
+                />
               </div>
             </div>
           </div>
-          <button type="button" className="btn mt-5 roll-button shadow">Roll</button>
+          <button onClick = {rollDice} type="button" className="btn mt-5 roll-button shadow">Roll</button>
         </main>
     </div>
   )
