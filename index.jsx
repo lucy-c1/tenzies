@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Dice from "./Dice.jsx"
+import Confetti from "react-confetti"
 
 function App() {
   const [win, setWin] = React.useState(false);
@@ -21,7 +22,7 @@ function App() {
   // call after every dice roll and hold
   function checkWin() {
     for (let i = 0; i < numbersArr.length - 1; i++) {
-      if (!isHoldArr[i] && (numbersArr[i] !== numbersArr[i + 1])) {
+      if (!isHoldArr[i] || (numbersArr[i] !== numbersArr[i + 1])) {
         return false;
       }
     }
@@ -63,104 +64,105 @@ function App() {
   
   return (
     <div className = "app-container">
-        {win && 
-        <div className="alert alert-success" role="alert">
-          <h4 className="alert-heading">Well done!</h4>
-        </div>}
+      {win && <Confetti />}
+      {win && 
+      <div className="alert alert-success" role="alert">
+        <h4 className="alert-heading">Well done!</h4>
+      </div>}
 
-        <main className = "main-container">
-          <h1 className = "h1">Tenzies</h1>
-          <h2 className = "h5">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
-          <div className = "container">
-            <div className="row g-0">
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {0}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {1}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {2}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {3}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {4}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
+      <main className = "main-container">
+        <h1 className = "h1">Tenzies</h1>
+        <h2 className = "h5">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
+        <div className = "container">
+          <div className="row g-0">
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {0}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
             </div>
-            <div className="row g-0 mt-5">
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {5}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {6}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {7}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {8}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
-              <div className="col">
-                <Dice 
-                holdNumber = {holdNumber}
-                index = {9}
-                isHoldArr = {isHoldArr}
-                numbersArr = {numbersArr}
-                />
-              </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {1}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {2}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {3}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {4}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
             </div>
           </div>
-          <button onClick = {function () {
-            !win ? rollDice() : startOver()
-          }} type="button" className="btn mt-5 roll-button shadow">{win ? "Start over" : "Roll"}</button>
-        </main>
+          <div className="row g-0 mt-5">
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {5}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {6}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {7}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {8}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+            <div className="col">
+              <Dice 
+              holdNumber = {holdNumber}
+              index = {9}
+              isHoldArr = {isHoldArr}
+              numbersArr = {numbersArr}
+              />
+            </div>
+          </div>
+        </div>
+        <button onClick = {function () {
+          !win ? rollDice() : startOver()
+        }} type="button" className="btn mt-5 roll-button shadow">{win ? "Start over" : "Roll"}</button>
+      </main>
     </div>
   )
 }
