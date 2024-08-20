@@ -12,12 +12,18 @@ body {
     display: flex;
     padding-top: 8%;
     padding-bottom: 8%;
+    flex-direction: column;
+}
+
+.alert {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .main-container {
     background-color: #F5F5F5;
     height: 100%;
-    width: 100%;
     margin-left: 10%;
     margin-right: 10%;
     border-radius: 10px;

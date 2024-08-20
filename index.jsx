@@ -3,31 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Dice from "./Dice.jsx"
 
 function App() {
-
-  /*
-  Names and functions:
-  holdNumber(), holdIndexesArr (array of indexes that are on hold)
-  numbersArr (array of the current 10 numbers)
-  rollDice()
-  1. holdNumber() function, prop for Dice, used for onclick in Dice
-    - changes color to green
-    - add the corresponding index to holdIndexesArr
-    - changes color to white
-    - remove corresponding index from holdIndexesArr
-  2. rollDice() function, onclick inside App
-    - generates n random numbers from 1-6 where n is 10 minus number
-    of elements in holdIndexesArr
-    - assign a number to each of the indexes in numbersArr that are
-    not in holdIndexesArr
-  3. Dice component props
-    - holdNumber
-    - index
-    - numbersArr
-  4. When page first loads, call rollDice() to set the initial values of numbersArr
-  */
-  // const [styles, setStyles] = React.useState({
-  //   backgroundColor: "white"
-  // })
+  const [win, setWin] = React.useState(false);
   const [isHoldArr, setIsHoldArr] = React.useState([
     false, false, false, false, false, false, false, false, false, false
   ])
@@ -41,6 +17,16 @@ function App() {
   }
 
   const [numbersArr, setNumbersArr] = React.useState(generateRandomNumbers(10));
+
+  // call after every dice roll and hold
+  function checkWin() {
+    for (let i = 0; i < numbersArr.length - 1; i++) {
+      if (!isHoldArr[i] && (numbersArr[i] !== numbersArr[i + 1])) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   function rollDice() {
     // generate random numbers but only update the index of numersArr if the corresponding index in isHoldArr is false 
@@ -56,29 +42,24 @@ function App() {
 
   function holdNumber(index) {
     console.log("holdNumber function. Selected index " + index);
-    // if (!isHoldArr[index]) {
-    //   setStyles({
-    //     backgroundColor: "#59E391"
-    //   })
-    // } else {
-    //   setStyles({
-    //     backgroundColor: "white"
-    //   })
-    // }
-    // flip the corresponding isHoldArr element 
     setIsHoldArr(function (prevIsHoldArr) {
-      // const newArr = prevIsHoldArr.map(function (isHold, i) {
-      //   return index === i ? !isHold : isHold;
-      // });
-      // console.log(newArr)
       return prevIsHoldArr.map(function (isHold, i) {
         return index === i ? !isHold : isHold;
       });
     })
+    setWin(checkWin());
+    if (win) {
+      console.log("Great job!");
+    }
   }
   
   return (
     <div className = "app-container">
+        {win && 
+        <div className="alert alert-success" role="alert">
+          <h4 className="alert-heading">Well done!</h4>
+        </div>}
+
         <main className = "main-container">
           <h1 className = "h1">Tenzies</h1>
           <h2 className = "h5">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
@@ -168,7 +149,7 @@ function App() {
               </div>
             </div>
           </div>
-          <button onClick = {rollDice} type="button" className="btn mt-5 roll-button shadow">Roll</button>
+          <button onClick = {rollDice} type="button" className="btn mt-5 roll-button shadow">{win ? "Start over" : "Roll"}</button>
         </main>
     </div>
   )
