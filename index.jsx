@@ -7,7 +7,7 @@ function App() {
     <div className = "app-container">
         <main className = "main-container">
           <h1 className = "h1">Tenzies</h1>
-          <h2 className = "h5 pb-5">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
+          <h2 className = "h5">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
           <div className = "container">
             <div className="row g-0">
               <div className="col">
@@ -44,6 +44,7 @@ function App() {
               </div>
             </div>
           </div>
+          <button type="button" className="btn mt-5 roll-button shadow">Roll</button>
         </main>
     </div>
   )

@@ -2,8 +2,8 @@ import React from "react"
 
 export default function Dice(props) {
     return (
-        <div className = "dice-container">
+        <button className = "dice-container shadow">
             <p className = "dice-num">1</p>
-        </div>
+        </button>
     );
 }
