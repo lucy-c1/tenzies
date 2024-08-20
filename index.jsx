@@ -7,8 +7,43 @@ function App() {
     <div className = "app-container">
         <main className = "main-container">
           <h1 className = "h1">Tenzies</h1>
-          <h2 className = "h2">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
-          
+          <h2 className = "h2 pb-5">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
+          <div className = "container">
+            <div className="row g-0">
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+            </div>
+            <div className="row g-0 mt-5">
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+              <div className="col">
+                <Dice />
+              </div>
+            </div>
+          </div>
         </main>
     </div>
   )

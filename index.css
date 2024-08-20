@@ -30,10 +30,37 @@ body {
 
 .h1 {
     font-family: Karla;
-    font-size: 2rem !important;
+    font-size: 3rem !important;
 }
 
 .h2 {
     font-family: inter;
-    font-size: 1rem !important;
+    font-size: 1.5rem !important;
+    width: 50%;
+}
+
+.container {
+    width: 50% !important;
+}
+
+.dice-container {
+    margin: 0;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    width: 60px !important;
+    height: 60px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-num {
+    margin: 0;
+    font-family: karla;
+    font-size: 2rem;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
 }
