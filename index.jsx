@@ -67,7 +67,10 @@ function App() {
   
   return (
     <div className = "app-container">
-      {win && <Confetti />}
+      {win && 
+      <div>
+        <Confetti />  
+      </div>}
       {win && 
       <div className="alert alert-success" role="alert">
         <h4 className="alert-heading">Well done!</h4>
