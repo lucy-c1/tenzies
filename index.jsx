@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import Dice from "./Dice.jsx"
 import Confetti from "react-confetti"
@@ -48,11 +48,14 @@ function App() {
         return index === i ? !isHold : isHold;
       });
     })
+  }
+
+  useEffect(function () {
     setWin(checkWin());
     if (win) {
       console.log("Great job!");
     }
-  }
+  }, [isHoldArr])
 
   function startOver() {
     setWin(false);
