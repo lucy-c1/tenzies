@@ -25,9 +25,9 @@ function App() {
     - numbersArr
   4. When page first loads, call rollDice() to set the initial values of numbersArr
   */
-  const [styles, setStyles] = React.useState({
-    backgroundColor: "white"
-  })
+  // const [styles, setStyles] = React.useState({
+  //   backgroundColor: "white"
+  // })
   const [isHoldArr, setIsHoldArr] = React.useState([
     false, false, false, false, false, false, false, false, false, false
   ])
@@ -56,15 +56,15 @@ function App() {
 
   function holdNumber(index) {
     console.log("holdNumber function. Selected index " + index);
-    if (!isHoldArr[index]) {
-      setStyles({
-        backgroundColor: "#59E391"
-      })
-    } else {
-      setStyles({
-        backgroundColor: "white"
-      })
-    }
+    // if (!isHoldArr[index]) {
+    //   setStyles({
+    //     backgroundColor: "#59E391"
+    //   })
+    // } else {
+    //   setStyles({
+    //     backgroundColor: "white"
+    //   })
+    // }
     // flip the corresponding isHoldArr element 
     setIsHoldArr(function (prevIsHoldArr) {
       // const newArr = prevIsHoldArr.map(function (isHold, i) {
@@ -88,7 +88,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {0}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -96,7 +96,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {1}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -104,7 +104,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {2}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -112,7 +112,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {3}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -120,7 +120,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {4}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -130,7 +130,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {5}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -138,7 +138,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {6}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -146,7 +146,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {7}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -154,7 +154,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {8}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
@@ -162,7 +162,7 @@ function App() {
                 <Dice 
                 holdNumber = {holdNumber}
                 index = {9}
-                styles = {styles}
+                isHoldArr = {isHoldArr}
                 numbersArr = {numbersArr}
                 />
               </div>
