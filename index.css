@@ -5,3 +5,35 @@
 body {
     margin: 0;
 }
+
+.app-container {
+    background-color: #0B2434;
+    height: 100dvh;
+    display: flex;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.main-container {
+    background-color: #F5F5F5;
+    height: 100%;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.h1 {
+    font-family: Karla;
+    font-size: 2rem !important;
+}
+
+.h2 {
+    font-family: inter;
+    font-size: 1rem !important;
+}
