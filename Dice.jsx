@@ -1,30 +1,22 @@
 import React from "react"
 
 export default function Dice(props) {
-    const [styles, setStyles] = React.useState({
+    const white = {
         backgroundColor: "white"
-    });
-
-    function changeColor() {
-        if (!props.isHoldArr[props.index]) {
-            setStyles({
-                backgroundColor: "#59E391"
-            })
-        } else {
-            setStyles({
-                backgroundColor: "white"
-            })
-        }
-    }
+    };
+    const green = {
+        backgroundColor: "#59E391"
+    };
     
     return (
         <button onClick = {function () {
-            changeColor();
             return props.holdNumber(props.index);
         }} 
         className = "dice-container shadow" 
         id = {"button" + props.index}
-        style = {styles}
+        style = {
+            props.isHoldArr[props.index] ? green : white
+        }
         >
             <p className = "dice-num">{props.numbersArr[props.index]}</p>
         </button>

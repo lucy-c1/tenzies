@@ -52,6 +52,14 @@ function App() {
       console.log("Great job!");
     }
   }
+
+  function startOver() {
+    setWin(false);
+    setIsHoldArr([
+      false, false, false, false, false, false, false, false, false, false
+    ])
+    setNumbersArr(generateRandomNumbers(10));
+  }
   
   return (
     <div className = "app-container">
@@ -149,7 +157,9 @@ function App() {
               </div>
             </div>
           </div>
-          <button onClick = {rollDice} type="button" className="btn mt-5 roll-button shadow">{win ? "Start over" : "Roll"}</button>
+          <button onClick = {function () {
+            !win ? rollDice() : startOver()
+          }} type="button" className="btn mt-5 roll-button shadow">{win ? "Start over" : "Roll"}</button>
         </main>
     </div>
   )
