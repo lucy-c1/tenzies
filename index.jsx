@@ -10,6 +10,7 @@ function App() {
   ])
 
   function generateRandomNumbers(n) {
+    console.log("Test");
     const randomArr = []
     for (let i = 0; i < n; i++) {
       randomArr.push(Math.floor(Math.random() * 6 + 1));
