@@ -1,10 +1,10 @@
 {
   "name": "Scrim-s0afbo9oo7",
   "description": "https://v2.scrimba.com/s0afbo9oo7",
-  "homepage": "https://lucy-c1.github.io/Tenzies",
+  "homepage": "https://lucy-c1.github.io/tenzies",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
