@@ -1,7 +1,10 @@
 {
   "name": "Scrim-s0afbo9oo7",
   "description": "https://v2.scrimba.com/s0afbo9oo7",
+  "homepage": "https://lucy-c1.github.io/Tenzies",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +18,7 @@
     "vite": "latest"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "*"
+    "@vitejs/plugin-react": "*",
+    "gh-pages": "^6.1.1"
   }
 }
